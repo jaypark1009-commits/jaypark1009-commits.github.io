@@ -22,11 +22,22 @@
     .broadcast-links{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:8px}.broadcast-link{font-size:11px;text-decoration:none;border:1px solid #536257;border-radius:7px;padding:7px 10px;color:#fff;background:#273129}.broadcast-link:hover{border-color:var(--lime);color:var(--lime)}.broadcast-dock{display:flex;align-items:center;gap:12px;margin-top:0;padding:6px 8px;border-radius:10px;background:#1b211d;color:#fff;font-size:11px}.broadcast-dock strong{color:var(--lime);margin-right:2px}.broadcast-link{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;padding:0;font-size:18px;line-height:1}.broadcast-link span{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.broadcast-link:hover{transform:translateY(-1px)}
     .fixture-links{display:flex;gap:6px;align-items:center}.fixture-links a{color:#b9c8bb;text-decoration:none;font:700 10px 'DM Sans',sans-serif}.fixture-links a:hover{color:var(--lime)}
     .calendar-event.battle.range-start,.calendar-event.battle.range-end{margin-left:-4px;margin-right:-4px;border-radius:0;padding-left:7px;padding-right:7px}.calendar-event.battle.range-start{margin-left:0;border-radius:3px 0 0 3px}.calendar-event.battle.range-end{margin-right:0;border-radius:0 3px 3px 0}.calendar-event.battle.range-start.range-end{border-radius:3px}
+    :root{--ink:#edf2eb;--muted:#9ba79e;--line:#303a33;--paper:#101512;--green:#8fc29a;--orange:#f4a16b;--blue:#80b5e8;--shadow:0 18px 45px rgba(0,0,0,.24)}
+    body{background:radial-gradient(ellipse at 82% 0%,#1d2921 0%,var(--paper) 52%);color:var(--ink)}
+    .exam-countdown{display:flex;align-items:center;justify-content:space-between;margin:0 0 22px;padding:12px 16px;border:1px solid #495a40;border-radius:10px;background:#20291f;color:var(--lime)}.exam-countdown div{display:flex;align-items:baseline;gap:12px}.exam-countdown strong{font:700 15px 'DM Sans','Noto Sans KR',sans-serif}.exam-countdown span{font-size:12px;color:#d4dfcb}.exam-countdown small{color:#a6b29f;font-size:11px}
+    .board,.source-card{background:#1a211c;border-color:var(--line);box-shadow:var(--shadow)}.form-card{background:#202a22;border-color:#354237}.source-card.pubg{background:#171d19;border-color:#303a33}.source-card.football{background:#1b2429;border-color:#35434b}
+    .filters{background:#242d27}.filters button.active{background:#364239;color:var(--ink);box-shadow:none}.calendar-actions button,.calendar-actions select{background:#252e28;color:var(--muted)}.calendar-weekday{background:#202822}.calendar-day{background:#1a211c;color:var(--ink)}.calendar-day:hover{background:#29352b}.calendar-day.muted{background:#151b17;color:#68736b}
+    .field label{color:#bac6bb}.field input,.field select,.field textarea,.fixture-toolbar select{background:#151b17;border-color:#3a463d;color:var(--ink)}.field input::placeholder,.field textarea::placeholder{color:#758178}.team-tabs button{background:#283238;color:#a8c0d2}.team-tabs button.active{background:#354650;color:#a8d1f5}
+    .event:hover{border-color:#657d67}.check{background:#1a211c;color:var(--green)}.check:hover,.calendar-actions button:hover,.calendar-actions select:hover{background:#3d4c32;color:#fff}.share-button,.submit{background:#d7f35b;color:#17211c}.share-button:hover,.submit:hover{background:#b8d84d;color:#17211c}.official-link{color:#aab7ad}.pubg .official-link{color:#bdc8bb}.fixture-meta{color:#a3afa5}.fixture-date{color:#8fc29a}
+    .fixture-score{display:inline-block;margin-left:9px;color:var(--lime);font:700 12px 'DM Sans','Noto Sans KR',sans-serif}.fixture-score.unavailable{color:#9ba79e;font:500 10px 'Noto Sans KR',sans-serif}
+    @media(max-width:760px){.exam-countdown{margin-bottom:18px;padding:10px 12px}.exam-countdown strong{font-size:14px}.exam-countdown span{font-size:11px}}
+    @media(max-width:760px){.topbar{flex-wrap:wrap;gap:14px}.topbar>div:last-child{width:100%;flex-wrap:wrap;justify-content:space-between!important;gap:8px!important}}
   </style>
 </head>
 <body>
   <main class="shell">
-    <nav class="topbar"><div class="brand"><span class="brand-mark">P</span> PLAYBOOK</div><div style="display:flex;align-items:center;gap:12px"><div class="top-note">친구들과의 다음 플레이를 기록하는 곳</div><div class="broadcast-dock" aria-label="관련 사이트"><strong>PLAY LINKS</strong><a class="broadcast-link" href="https://pubg.game.daum.net/pubg/index.daum" target="_blank" rel="noreferrer" title="배틀그라운드 공식 사이트" aria-label="배틀그라운드 공식 사이트">🎮<span>배틀그라운드</span></a><a class="broadcast-link" href="https://youtube.com/" target="_blank" rel="noreferrer" title="YouTube" aria-label="YouTube">▶️<span>YouTube</span></a><a class="broadcast-link" href="https://gall.dcinside.com/mgallery/board/lists?id=fromis" target="_blank" rel="noreferrer" title="프로미스나인 갤러리" aria-label="프로미스나인 갤러리">💌<span>프로미스나인</span></a></div><button class="share-button" id="shareButton" type="button">↗ 카카오톡으로 공유</button></div></nav>
+    <div class="exam-countdown" aria-label="임용고시 디데이"><div><strong id="examDday">임용고시 D-10</strong><span>할 수 있어요</span></div><small>시험일 2026.11.28</small></div>
+    <nav class="topbar"><div class="brand"><span class="brand-mark">P</span> PLAYBOOK</div><div style="display:flex;align-items:center;gap:12px"><div class="top-note">친구들과의 다음 플레이를 기록하는 곳</div><div class="broadcast-dock" aria-label="관련 사이트"><strong>PLAY LINKS</strong><a class="broadcast-link" href="https://pubg.kakaogames.com/pubg/index.daum" target="_blank" rel="noreferrer" title="배틀그라운드 | 카카오게임즈" aria-label="배틀그라운드 | 카카오게임즈">🎮<span>배틀그라운드</span></a><a class="broadcast-link" href="https://youtube.com/" target="_blank" rel="noreferrer" title="YouTube" aria-label="YouTube">▶️<span>YouTube</span></a><a class="broadcast-link" href="https://gall.dcinside.com/mgallery/board/lists?id=fromis" target="_blank" rel="noreferrer" title="프로미스나인 갤러리" aria-label="프로미스나인 갤러리">💌<span>프로미스나인</span></a></div><button class="share-button" id="shareButton" type="button">↗ 카카오톡으로 공유</button></div></nav>
     <section class="intro"><div><p class="eyebrow">Your social scoreboard</p><h1>이번 주, 같이<br /><span>플레이할 시간</span>이에요.</h1></div><p class="intro-copy">배그 한 판부터 주말 축구까지.<br />우리 팀의 약속을 놓치지 않게 모아두세요.</p></section>
     <div class="dashboard">
       <section class="board"><div class="board-head"><h2>다가오는 일정 <span class="count" id="count">0개</span></h2><div class="filters"><button class="active" data-filter="all">전체</button><button data-filter="battle">배틀그라운드</button><button data-filter="ball">축구</button><button data-filter="personal">개인일정</button></div></div><div id="list" class="schedule-list"></div><div class="calendar"><div class="calendar-head"><h3 id="calendarTitle">달력</h3><div class="calendar-actions"><button type="button" id="calendarPrev" aria-label="이전 달">이전</button><button type="button" id="calendarNext" aria-label="다음 달">다음</button><select id="calendarYear" aria-label="달력 연도"></select><select id="calendarMonth" aria-label="달력 월"></select><button type="button" id="calendarToday">오늘</button></div></div><div class="calendar-grid" id="calendarGrid"></div></div><div class="footer-line"><span>브라우저에 자동으로 저장됩니다</span><strong id="weekLabel"></strong></div></section>
@@ -54,6 +65,9 @@
     const calendarDate = new Date(today.getFullYear(), today.getMonth(), 1);
     const pad = value => String(value).padStart(2, '0');
     const todayString = `${today.getFullYear()}-${pad(today.getMonth() + 1)}-${pad(today.getDate())}`;
+    const examDate = new Date(2026, 10, 28);
+    const examDaysLeft = Math.ceil((new Date(examDate.getFullYear(), examDate.getMonth(), examDate.getDate()) - new Date(today.getFullYear(), today.getMonth(), today.getDate())) / 86400000);
+    document.getElementById('examDday').textContent = examDaysLeft > 0 ? `임용고시 D-${examDaysLeft}` : examDaysLeft === 0 ? '임용고시 D-DAY' : `임용고시 D+${Math.abs(examDaysLeft)}`;
     document.getElementById('date').value = todayString;
     document.getElementById('weekLabel').textContent = `${today.getMonth() + 1}월 ${today.getDate()}일 기준`;
     function loadItems(){try{const items=JSON.parse(localStorage.getItem(KEY)) || [];const ids=new Set();let changed=false;items.forEach(item=>{if(!item.id || ids.has(item.id)){item.id=createId();changed=true}ids.add(item.id)});if(changed)saveItems(items);return items}catch(error){return []}}
@@ -84,15 +98,24 @@
     document.getElementById('calendarToday').onclick=()=>{calendarDate.setFullYear(today.getFullYear(),today.getMonth(),1);renderCalendar()};
     const footballFixtures = {daejeon:[],tottenham:[],atletico:[]};
     const officialFallbackFixtures = [
-      ['09.20','인천 vs 대전하나시티즌','하나은행 K리그1 2026 · 19:00','2026-09-20','19:00','https://www.dhcfc.kr/'],
-      ['10.09','대전하나시티즌 vs 전북','하나은행 K리그1 2026 · 14:00','2026-10-09','14:00','https://www.dhcfc.kr/'],
-      ['10.13','상하이 포트 vs 대전하나시티즌','ACL 2026 · 18:00','2026-10-13','18:00','https://www.dhcfc.kr/'],
-      ['10.18','대전하나시티즌 vs 광주','하나은행 K리그1 2026 · 14:00','2026-10-18','14:00','https://www.dhcfc.kr/'],
-      ['10.24','김천 vs 대전하나시티즌','하나은행 K리그1 2026 · 14:00','2026-10-24','14:00','https://www.dhcfc.kr/'],
-      ['10.27','대전하나시티즌 vs 비셀 고베','ACL 2026 · 19:00','2026-10-27','19:00','https://www.dhcfc.kr/'],
-      ['11.03','가시와 vs 대전하나시티즌','ACL 2026 · 19:00','2026-11-03','19:00','https://www.dhcfc.kr/'],
+      ['09.05','부천 vs 대전하나시티즌','하나은행 K리그1 2026 · 19:00','2026-09-05','19:00','https://www.dhcfc.kr/',0,5],
+      ['09.09','대전하나시티즌 vs 안양','하나은행 K리그1 2026 · 19:30','2026-09-09','19:30','https://www.dhcfc.kr/',3,2],
+      ['09.12','대전하나시티즌 vs 포항','하나은행 K리그1 2026 · 19:00','2026-09-12','19:00','https://www.dhcfc.kr/',2,2],
+      ['09.15','대전하나시티즌 vs 교토','ACL 2026 · 19:00','2026-09-15','19:00','https://www.dhcfc.kr/',1,0],
+      ['09.20','인천 vs 대전하나시티즌','하나은행 K리그1 2026 · 19:00','2026-09-20','19:00','https://www.dhcfc.kr/',1,1],
+      ['10.09','대전하나시티즌 vs 전북','하나은행 K리그1 2026 · 14:00','2026-10-09','14:00','https://www.dhcfc.kr/',2,1],
+      ['10.13','상하이 포트 vs 대전하나시티즌','ACL 2026 · 18:00','2026-10-13','18:00','https://www.dhcfc.kr/',1,1],
+      ['10.18','대전하나시티즌 vs 광주','하나은행 K리그1 2026 · 14:00','2026-10-18','14:00','https://www.dhcfc.kr/',3,2],
+      ['10.24','김천 vs 대전하나시티즌','하나은행 K리그1 2026 · 14:00','2026-10-24','14:00','https://www.dhcfc.kr/',1,2],
+      ['10.27','대전하나시티즌 vs 비셀 고베','ACL 2026 · 19:00','2026-10-27','19:00','https://www.dhcfc.kr/',0,1],
+      ['10.31','전북 vs 대전하나시티즌','하나은행 K리그1 2026 · 14:00','2026-10-31','14:00','https://www.dhcfc.kr/',0,0],
+      ['11.03','가시와 vs 대전하나시티즌','ACL 2026 · 19:00','2026-11-03','19:00','https://www.dhcfc.kr/',2,0],
+      ['11.08','대전하나시티즌 vs 인천','하나은행 K리그1 2026 · 14:00','2026-11-08','14:00','https://www.dhcfc.kr/',2,0],
+      ['11.21','강원 vs 대전하나시티즌','하나은행 K리그1 2026 · 16:30','2026-11-21','16:30','https://www.dhcfc.kr/'],
       ['11.24','대전하나시티즌 vs 베이징','ACL 2026 · 19:00','2026-11-24','19:00','https://www.dhcfc.kr/'],
+      ['11.28','서울 vs 대전하나시티즌','하나은행 K리그1 2026 · 14:00','2026-11-28','14:00','https://www.dhcfc.kr/'],
       ['12.01','조호르 vs 대전하나시티즌','ACL 2026 · 20:15','2026-12-01','20:15','https://www.dhcfc.kr/'],
+      ['12.06','대전하나시티즌 vs 울산','하나은행 K리그1 2026 · 14:00','2026-12-06','14:00','https://www.dhcfc.kr/'],
     ];
     const officialFallbackTottenham = [
       ['09.19','토트넘 vs 아스톤 빌라','Premier League · 20:30','2026-09-19','20:30','https://www.transfermarkt.co.kr/tottenham-hotspur/spielplandatum/verein/148'],
@@ -176,17 +199,157 @@
       ['09.20','PUBG Americas Series 2','공식 토너먼트 · 종료 2026-10-05','2026-09-20','12:00','https://pubgesports.com/ko/tournament?YEAR=2026&REGION_TYPE=ALL'],
       ['09.20','2026 PUBG WEEKELY SERIES: PHASE2','공식 토너먼트 · 종료 2026-10-04','2026-09-20','12:00','https://pubgesports.com/ko/tournament?YEAR=2026&REGION_TYPE=ALL'],
       ['10.01','PUBG VIETNAM SERIES 2026 PHASE 2','공식 토너먼트 · 종료 2026-10-04','2026-10-01','12:00','https://pubgesports.com/ko/tournament?YEAR=2026&REGION_TYPE=ALL'],
+      ['12.01','PUBG GLOBAL CHAMPIONSHIP 2026','공식 토너먼트 · 종료 2026-12-13','2026-12-01','12:00','https://pubgesports.com/ko/tournament?YEAR=2026&REGION_TYPE=ALL'],
     ];
     let pubgFixtures = [];
     function matchRow(match, category){const start=new Date(match.starts_at);return [`${String(start.getMonth()+1).padStart(2,'0')}.${String(start.getDate()).padStart(2,'0')}`,match.title,`${match.venue || '경기장 미정'} · ${start.toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit',hour12:false})}`,match.starts_at.slice(0,10),start.toTimeString().slice(0,5),match.source_url]}
-    async function loadOfficialMatches(){const config=window.PLAYBOOK_CONFIG||{};if(!config.supabaseUrl||!config.supabaseAnonKey){footballFixtures.daejeon=officialFallbackFixtures;footballFixtures.tottenham=officialFallbackTottenham;footballFixtures.atletico=officialFallbackAtletico;pubgFixtures=pubgFallbackFixtures;renderFootball(selectedTeam);renderPubg();return}const headers={apikey:config.supabaseAnonKey,Authorization:'Bearer '+config.supabaseAnonKey};async function readTable(name){try{const r=await fetch(config.supabaseUrl+'/rest/v1/'+name+'?select=*',{headers});if(!r.ok)return [];return await r.json()}catch{return []}}try{const [officialRows,matchRows]=await Promise.all([readTable('official_matches'),readTable('matches')]);const grouped={daejeon:[],tottenham:[],atletico:[]};const pubg=[];const seen=new Set();const normalizeTeam=(row)=>{if(row.team&&grouped[row.team])return row.team;const text=String([row.title,row.home_team,row.away_team].filter(Boolean).join(' ')).toLowerCase();if(/daejeon|대전하나|대전 하나|hana citizen/.test(text))return 'daejeon';if(/tottenham|토트넘/.test(text))return 'tottenham';if(/atletico|atlético|아틀레티코/.test(text))return 'atletico';return null};const addRow=(row)=>{const sport=String(row.sport||'').toLowerCase();const starts=row.starts_at||row.start_time||row.scheduled_at||row.begin_at;if(!starts)return;const startDate=new Date(starts);if(Number.isNaN(startDate.getTime())||startDate<new Date())return;const source=row.source_url||row.source||'';const title=row.title||[row.home_team,row.away_team].filter(Boolean).join(' vs ')||row.name||'경기 일정';const key=(row.external_id||row.id||title)+'|'+starts;if(seen.has(key))return;seen.add(key);const item=[String(startDate.getMonth()+1).padStart(2,'0')+'.'+String(startDate.getDate()).padStart(2,'0'),title,row.league?row.league+' · ':''+(row.venue||'')+' · '+startDate.toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit',hour12:false}),startDate.toISOString().slice(0,10),startDate.toTimeString().slice(0,5),source];if(sport==='pubg'||sport==='battle'||row.game==='pubg'){pubg.push(item);return}const team=normalizeTeam(row);if(team)grouped[team].push(item)};officialRows.forEach(addRow);matchRows.forEach(addRow);if(!grouped.daejeon.length)grouped.daejeon=officialFallbackFixtures;if(!grouped.tottenham.length)grouped.tottenham=officialFallbackTottenham;if(!grouped.atletico.length)grouped.atletico=officialFallbackAtletico;if(!pubg.length)pubg.push(...pubgFallbackFixtures);Object.keys(grouped).forEach(team=>grouped[team].sort((a,b)=>(a[3]+a[4]).localeCompare(b[3]+b[4])));pubg.sort((a,b)=>(a[3]+a[4]).localeCompare(b[3]+b[4]));Object.assign(footballFixtures,grouped);pubgFixtures=pubg;renderFootball(selectedTeam);renderPubg()}catch(error){footballFixtures.daejeon=officialFallbackFixtures;footballFixtures.tottenham=officialFallbackTottenham;footballFixtures.atletico=officialFallbackAtletico;pubgFixtures=pubgFallbackFixtures;renderFootball(selectedTeam);renderPubg();console.warn(error.message)}}
-    function renderPubg(){const target=document.getElementById('pubgFixtures');const years=[...new Set(pubgFixtures.map(match=>match[3].slice(0,4)).filter(Boolean))];if(!years.includes(String(today.getFullYear())))years.unshift(String(today.getFullYear()));years.sort();const yearSelect=document.getElementById('pubgYear');const monthSelect=document.getElementById('pubgMonth');selectedPubgYear=selectedPubgYear&&years.includes(selectedPubgYear)?selectedPubgYear:(years[0]||String(today.getFullYear()));yearSelect.innerHTML=years.map(year=>`<option value="${year}">${year}년</option>`).join('');yearSelect.value=selectedPubgYear;const months=[...new Set(pubgFixtures.filter(match=>match[3].startsWith(`${selectedPubgYear}-`)).map(match=>match[3].slice(5,7)))].sort();if(!months.length)months.push(String(today.getMonth()+1).padStart(2,'0'));selectedPubgMonth=selectedPubgMonth&&months.includes(selectedPubgMonth)?selectedPubgMonth:months[0];monthSelect.innerHTML=months.map(month=>`<option value="${month}">${Number(month)}월</option>`).join('');monthSelect.value=selectedPubgMonth;const visibleFixtures=pubgFixtures.filter(match=>match[3].startsWith(`${selectedPubgYear}-${selectedPubgMonth}`));if(!visibleFixtures.length){target.innerHTML='<div class="empty">해당 연도·월에 동기화된 PUBG 경기가 없습니다.</div>';renderCalendar();return}const groups=visibleFixtures.reduce((result,match)=>{const parts=String(match[1]).split(' · ');const tournament=parts.shift()||'PUBG Esports';(result[tournament]??=[]).push({...match,displayTitle:parts.join(' · ')||tournament});return result},{});target.innerHTML=Object.entries(groups).map(([tournament,matches])=>`<section class="pubg-group"><h4>${escapeHtml(tournament)}</h4>${matches.map(match=>`<div class="fixture"><div class="fixture-date">${match[0]}</div><div><span class="fixture-name">${escapeHtml(match.displayTitle)}</span><span class="fixture-meta">${escapeHtml(match[2])}${match[5]?` · <a href="${match[5]}" target="_blank" rel="noreferrer">원문 ↗</a>`:''}</span></div><button class="add-source" data-source-title="${escapeHtml(match[1])}" data-source-date="${match[3]}" data-source-time="${match[4]}" data-source-category="battle">+ 추가</button></div>`).join('')}</section>`).join('');target.querySelectorAll('.add-source').forEach(button=>button.onclick=()=>addSourceEvent(button));renderCalendar()}
-    function renderFixtureRows(fixtures,category){return fixtures.map(match=>`<div class="fixture"><div class="fixture-date">${match[0]}</div><div><span class="fixture-name">${escapeHtml(match[1])}</span><span class="fixture-meta">${escapeHtml(match[2])}${match[5]?` · <a href="${match[5]}" target="_blank" rel="noreferrer">원문 ↗</a>`:''}</span></div><button class="add-source" data-source-title="${escapeHtml(match[1])}" data-source-date="${match[3]}" data-source-time="${match[4]}" data-source-category="${category}">+ 추가</button></div>`).join('')}
-    function renderFootball(team=selectedTeam){selectedTeam=team;const fixtures=footballFixtures[team]||[];const years=[...new Set(fixtures.map(m=>m[3].slice(0,4)).filter(Boolean))];if(!years.includes(String(today.getFullYear())))years.unshift(String(today.getFullYear()));years.sort();const yearSelect=document.getElementById('footballYear');const monthSelect=document.getElementById('footballMonth');const wantedYear=selectedFootballYear||String(today.getFullYear());selectedFootballYear=years.includes(wantedYear)?wantedYear:(years[0]||String(today.getFullYear()));yearSelect.innerHTML=years.map(year=>'<option value="'+year+'">'+year+'년</option>').join('');yearSelect.value=selectedFootballYear;const months=[...new Set(fixtures.filter(m=>m[3].startsWith(selectedFootballYear+'-')).map(m=>m[3].slice(5,7)))].sort();if(!months.length)months.push(String(today.getMonth()+1).padStart(2,'0'));selectedFootballMonth=months.includes(selectedFootballMonth)?selectedFootballMonth:months[0];monthSelect.innerHTML=months.map(month=>'<option value="'+month+'">'+Number(month)+'월</option>').join('');monthSelect.value=selectedFootballMonth;const visibleFixtures=fixtures.filter(match=>match[3].startsWith(selectedFootballYear+'-'+selectedFootballMonth));const target=document.getElementById('footballFixtures');target.innerHTML=visibleFixtures.length?visibleFixtures.map(match=>'<div class="fixture"><div class="fixture-date">'+match[0]+'</div><div><span class="fixture-name">'+escapeHtml(match[1])+'</span><span class="fixture-meta">'+escapeHtml(match[2])+(match[5]?' · <a href="'+match[5]+'" target="_blank" rel="noreferrer">원문 ↗</a>':'')+'</span></div><button class="add-source" data-source-title="'+escapeHtml(match[1])+'" data-source-date="'+match[3]+'" data-source-time="'+match[4]+'" data-source-category="ball">+ 추가</button></div>').join(''):'<div class="empty">해당 연도·월에 동기화된 일정이 없습니다.</div>';target.querySelectorAll('.add-source').forEach(button=>button.onclick=()=>addSourceEvent(button))}
-    async function loadAtleticoFallback(){if((footballFixtures.atletico||[]).length)return;footballFixtures.atletico=officialFallbackAtletico;renderFootball('atletico')}
-    function showToast(message){const toast=document.getElementById('toast');toast.textContent=message;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2300)}
-    function addSourceEvent(button){const data={title:button.dataset.sourceTitle,category:button.dataset.sourceCategory,date:button.dataset.sourceDate,time:button.dataset.sourceTime,people:'',memo:'공식 경기 일정',done:false};const dates=[data.date];if(button.dataset.sourceEndDate){const endDate=new Date(`${button.dataset.sourceEndDate}T00:00:00`);const nextDate=new Date(`${data.date}T00:00:00`);nextDate.setDate(nextDate.getDate()+1);while(nextDate<=endDate){dates.push(dateKey(nextDate));nextDate.setDate(nextDate.getDate()+1)}}const items=loadItems();const newItems=dates.filter(date=>!hasDuplicate(items,{...data,date})).map(date=>({id:createId(),...data,date}));if(!newItems.length){showToast('같은 날짜에 같은 일정이 이미 있습니다');return}items.push(...newItems);saveItems(items);render();showToast(newItems.length>1?'주말 일정으로 추가했습니다':'내 일정에 추가했습니다')}
-    function renderCalendar(){const title=document.getElementById('calendarTitle');const grid=document.getElementById('calendarGrid');title.textContent=calendarDate.toLocaleDateString('ko-KR',{year:'numeric',month:'long'});syncCalendarSelectors();const rawItems=loadItems();const items=rawItems.flatMap(item=>{const start=new Date(`${item.date}T00:00:00`);const end=new Date(`${item.sourceEndDate||item.date}T00:00:00`);const dates=[];for(const cursor=new Date(start);cursor<=end;cursor.setDate(cursor.getDate()+1)){const key=dateKey(cursor);dates.push({...item,date:key,rangeStart:key===item.date,rangeEnd:key===dateKey(end),category:item.category||'personal'})}return dates});const weekdays=['일','월','화','수','목','금','토'];let html=weekdays.map(day=>`<div class="calendar-weekday">${day}</div>`).join('');const firstDay=calendarDate.getDay();const daysInMonth=new Date(calendarDate.getFullYear(),calendarDate.getMonth()+1,0).getDate();for(let cell=0;cell<42;cell++){const dayNumber=cell-firstDay+1;const date=new Date(calendarDate.getFullYear(),calendarDate.getMonth(),dayNumber);const key=dateKey(date);const currentMonth=dayNumber>0&&dayNumber<=daysInMonth;const dayItems=items.filter(item=>item.date===key);const classes=`calendar-day${currentMonth?'':' muted'}${key===todayString?' today':''}`;const visible=dayItems.slice(0,3).map(item=>`<span class="calendar-event ${item.category}${item.rangeStart?' range-start':''}${item.rangeEnd?' range-end':''}" title="${escapeHtml(item.title)}">${escapeHtml(item.title)}</span>`).join('');const more=dayItems.length>3?`<span class="calendar-event" style="background:var(--muted)">+${dayItems.length-3}개</span>`:'';html+=`<button type="button" class="${classes}" data-date="${key}"><span class="calendar-number">${date.getDate()}</span><span class="calendar-events">${visible}${more}</span></button>`}grid.innerHTML=html;grid.querySelectorAll('.calendar-day').forEach(day=>day.onclick=()=>{document.getElementById('date').value=day.dataset.date;document.getElementById('title').focus()})}
+    async function loadOfficialMatches(){
+      const config=window.PLAYBOOK_CONFIG||{};
+      if(!config.supabaseUrl||!config.supabaseAnonKey){
+        footballFixtures.daejeon=officialFallbackFixtures;
+        footballFixtures.tottenham=officialFallbackTottenham;
+        footballFixtures.atletico=officialFallbackAtletico;
+        pubgFixtures=pubgFallbackFixtures;
+        renderFootball(selectedTeam);
+        renderPubg();
+        return;
+      }
+      const headers={apikey:config.supabaseAnonKey,Authorization:'Bearer '+config.supabaseAnonKey};
+      async function readTable(name){
+        try{
+          const response=await fetch(config.supabaseUrl+'/rest/v1/'+name+'?select=*',{headers});
+          if(!response.ok)return [];
+          return await response.json();
+        }catch{return []}
+      }
+      try{
+        const [officialRows,matchRows]=await Promise.all([readTable('official_matches'),readTable('matches')]);
+        const grouped={daejeon:[],tottenham:[],atletico:[]};
+        const pubg=[];
+        const seen=new Set();
+        const normalizeTeam=row=>{
+          if(row.team&&grouped[row.team])return row.team;
+          const text=String([row.title,row.home_team,row.away_team].filter(Boolean).join(' ')).toLowerCase();
+          if(/daejeon|대전하나|대전 하나|hana citizen/.test(text))return 'daejeon';
+          if(/tottenham|토트넘/.test(text))return 'tottenham';
+          if(/atletico|atlético|아틀레티코/.test(text))return 'atletico';
+          return null;
+        };
+        const addRow=row=>{
+          const sport=String(row.sport||'').toLowerCase();
+          const starts=row.starts_at||row.start_time||row.scheduled_at||row.begin_at;
+          if(!starts)return;
+          const startDate=new Date(starts);
+          if(Number.isNaN(startDate.getTime()))return;
+          const source=row.source_url||row.source||'';
+          const title=row.title||[row.home_team,row.away_team].filter(Boolean).join(' vs ')||row.name||'경기 일정';
+          const key=(row.external_id||row.id||title)+'|'+starts;
+          if(seen.has(key))return;
+          seen.add(key);
+          const item=[String(startDate.getMonth()+1).padStart(2,'0')+'.'+String(startDate.getDate()).padStart(2,'0'),title,row.league?row.league+' · ':''+(row.venue||'')+' · '+startDate.toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit',hour12:false}),startDate.toISOString().slice(0,10),startDate.toTimeString().slice(0,5),source,row.home_score??row.homeScore??row.goals?.home??null,row.away_score??row.awayScore??row.goals?.away??null,row.status_short||row.status?.short||''];
+          if(sport==='pubg'||sport==='battle'||row.game==='pubg'){pubg.push(item);return}
+          const team=normalizeTeam(row);
+          if(team)grouped[team].push(item);
+        };
+        officialRows.forEach(addRow);
+        matchRows.forEach(addRow);
+        if(!grouped.daejeon.length)grouped.daejeon=officialFallbackFixtures;
+        if(!grouped.tottenham.length)grouped.tottenham=officialFallbackTottenham;
+        if(!grouped.atletico.length)grouped.atletico=officialFallbackAtletico;
+        if(!pubg.length)pubg.push(...pubgFallbackFixtures);
+        Object.keys(grouped).forEach(team=>grouped[team].sort((a,b)=>(a[3]+a[4]).localeCompare(b[3]+b[4])));
+        pubg.sort((a,b)=>(a[3]+a[4]).localeCompare(b[3]+b[4]));
+        Object.assign(footballFixtures,grouped);
+        pubgFixtures=pubg;
+        renderFootball(selectedTeam);
+        renderPubg();
+      }catch(error){
+        footballFixtures.daejeon=officialFallbackFixtures;
+        footballFixtures.tottenham=officialFallbackTottenham;
+        footballFixtures.atletico=officialFallbackAtletico;
+        pubgFixtures=pubgFallbackFixtures;
+        renderFootball(selectedTeam);
+        renderPubg();
+        console.warn(error.message);
+      }
+    }
+    function mergeFixturesByDate(fixtures,fallbacks){
+      const dates=new Set(fixtures.map(match=>match[3]));
+      const fallbackByDate=new Map(fallbacks.map(match=>[match[3],match]));
+      const merged=fixtures.map(match=>{
+        const fallback=fallbackByDate.get(match[3]);
+        if(!fallback)return match;
+        const item=[...match];
+        [6,7].forEach(index=>{if(item[index]===null||item[index]===undefined)item[index]=fallback[index]??null});
+        return item;
+      });
+      return [...merged,...fallbacks.filter(match=>!dates.has(match[3]))].sort((a,b)=>(a[3]+a[4]).localeCompare(b[3]+b[4]));
+    }
+    function renderFootball(team=selectedTeam){
+      selectedTeam=team;
+      const fixtures=team==='daejeon'?mergeFixturesByDate(footballFixtures[team]||[],officialFallbackFixtures):footballFixtures[team]||[];
+      const years=[...new Set(fixtures.map(match=>match[3].slice(0,4)).filter(Boolean))];
+      if(!years.includes(String(today.getFullYear())))years.unshift(String(today.getFullYear()));
+      years.sort();
+      const yearSelect=document.getElementById('footballYear');
+      const monthSelect=document.getElementById('footballMonth');
+      const wantedYear=selectedFootballYear||String(today.getFullYear());
+      selectedFootballYear=years.includes(wantedYear)?wantedYear:(years[0]||String(today.getFullYear()));
+      yearSelect.innerHTML=years.map(year=>'<option value="'+year+'">'+year+'년</option>').join('');
+      yearSelect.value=selectedFootballYear;
+      const months=[...new Set(fixtures.filter(match=>match[3].startsWith(selectedFootballYear+'-')).map(match=>match[3].slice(5,7)))].sort();
+      if(!months.length)months.push(String(today.getMonth()+1).padStart(2,'0'));
+      const monthOptions=['all',...months];
+      selectedFootballMonth=monthOptions.includes(selectedFootballMonth)?selectedFootballMonth:months.includes('11')?'11':'all';
+      monthSelect.innerHTML='<option value="all">전체</option>'+months.map(month=>'<option value="'+month+'">'+Number(month)+'월</option>').join('');
+      monthSelect.value=selectedFootballMonth;
+      const visibleFixtures=selectedFootballMonth==='all'?fixtures.filter(match=>match[3].startsWith(selectedFootballYear+'-')):fixtures.filter(match=>match[3].startsWith(selectedFootballYear+'-'+selectedFootballMonth));
+      const target=document.getElementById('footballFixtures');
+      target.innerHTML=visibleFixtures.length?visibleFixtures.map(match=>{
+        const isPast=match[3]<todayString;
+        const hasScore=match[6]!==null&&match[6]!==undefined&&match[7]!==null&&match[7]!==undefined;
+        const score=isPast?(hasScore?'<strong class="fixture-score">'+escapeHtml(match[6])+' : '+escapeHtml(match[7])+'</strong>':'<strong class="fixture-score unavailable">결과 확인 필요</strong>'):'';
+        return '<div class="fixture"><div class="fixture-date">'+match[0]+'</div><div><span class="fixture-name">'+escapeHtml(match[1])+score+'</span><span class="fixture-meta">'+escapeHtml(match[2])+(match[5]?' · <a href="'+match[5]+'" target="_blank" rel="noreferrer">원문 ↗</a>':'')+'</span></div><button class="add-source" data-source-title="'+escapeHtml(match[1])+'" data-source-date="'+match[3]+'" data-source-time="'+match[4]+'" data-source-category="ball">+ 추가</button></div>';
+      }).join(''):'<div class="empty">해당 연도·월에 동기화된 일정이 없습니다.</div>';
+      target.querySelectorAll('.add-source').forEach(button=>button.onclick=()=>addSourceEvent(button));
+    }
+    function isUpcomingPubg(match){
+      const endDate=String(match[2]).match(/종료\s+(\d{4}-\d{2}-\d{2})/);
+      if(endDate)return endDate[1]>=todayString;
+      const startsAt=new Date(`${match[3]}T${match[4]||'23:59'}:00`);
+      return !Number.isNaN(startsAt.getTime())&&startsAt>new Date();
+    }
+    function renderPubg(){
+      const target=document.getElementById('pubgFixtures');
+      const knownTitles=new Set(pubgFixtures.map(match=>match[1]));
+      pubgFixtures=[...pubgFixtures,...pubgFallbackFixtures.filter(match=>!knownTitles.has(match[1]))].filter(isUpcomingPubg);
+      const upcomingFixtures=pubgFixtures;
+      const years=[...new Set(upcomingFixtures.map(match=>match[3].slice(0,4)).filter(Boolean))];
+      if(!years.includes(String(today.getFullYear())))years.unshift(String(today.getFullYear()));
+      years.sort();
+      const yearSelect=document.getElementById('pubgYear');
+      const monthSelect=document.getElementById('pubgMonth');
+      selectedPubgYear=selectedPubgYear&&years.includes(selectedPubgYear)?selectedPubgYear:(years[0]||String(today.getFullYear()));
+      yearSelect.innerHTML=years.map(year=>'<option value="'+year+'">'+year+'년</option>').join('');
+      yearSelect.value=selectedPubgYear;
+      const months=[...new Set(upcomingFixtures.filter(match=>match[3].startsWith(selectedPubgYear+'-')).map(match=>match[3].slice(5,7)))].sort();
+      if(!months.length)months.push(String(today.getMonth()+1).padStart(2,'0'));
+      const monthOptions=['all',...months];
+      selectedPubgMonth=monthOptions.includes(selectedPubgMonth)?selectedPubgMonth:'all';
+      monthSelect.innerHTML='<option value="all">전체</option>'+months.map(month=>'<option value="'+month+'">'+Number(month)+'월</option>').join('');
+      monthSelect.value=selectedPubgMonth;
+      const visibleFixtures=selectedPubgMonth==='all'?upcomingFixtures.filter(match=>match[3].startsWith(selectedPubgYear+'-')):upcomingFixtures.filter(match=>match[3].startsWith(selectedPubgYear+'-'+selectedPubgMonth));
+      if(!visibleFixtures.length){target.innerHTML='<div class="empty">해당 연도·월에 동기화된 PUBG 경기가 없습니다.</div>';renderCalendar();return}
+      const groups=visibleFixtures.reduce((result,match)=>{
+        const parts=String(match[1]).split(' · ');
+        const tournament=parts.shift()||'PUBG Esports';
+        (result[tournament]??=[]).push({...match,displayTitle:parts.join(' · ')||tournament});
+        return result;
+      },{});
+      target.innerHTML=Object.entries(groups).map(([tournament,matches])=>'<section class="pubg-group"><h4>'+escapeHtml(tournament)+'</h4>'+matches.map(match=>'<div class="fixture"><div class="fixture-date">'+match[0]+'</div><div><span class="fixture-name">'+escapeHtml(match.displayTitle)+'</span><span class="fixture-meta">'+escapeHtml(match[2])+(match[5]?' · <a href="'+match[5]+'" target="_blank" rel="noreferrer">원문 ↗</a>':'')+'</span></div><button class="add-source" data-source-title="'+escapeHtml(match[1])+'" data-source-date="'+escapeHtml(match[3])+'" data-source-time="'+escapeHtml(match[4])+'" data-source-category="battle">+ 추가</button></div>').join('')+'</section>').join('');
+      target.querySelectorAll('.add-source').forEach(button=>button.onclick=()=>addSourceEvent(button));
+      renderCalendar();
+    }
     function addSourceEvent(button){const data={title:button.dataset.sourceTitle,category:button.dataset.sourceCategory,date:button.dataset.sourceDate,time:button.dataset.sourceTime,sourceEndDate:button.dataset.sourceEndDate||button.dataset.sourceDate,people:'',memo:'공식 경기 일정',done:false};const items=loadItems();if(hasDuplicate(items,data)){showToast('같은 날짜에 같은 일정이 이미 있습니다');return}items.push({id:createId(),...data});saveItems(items);render();showToast('내 일정에 추가했습니다')}
     const pubgButtonObserver=new MutationObserver(()=>document.querySelectorAll('.pubg .add-source').forEach(button=>{const match=pubgFixtures.find(item=>item[1]===button.dataset.sourceTitle);const end=String(match?.[2]||'').match(/종료\s+(\d{4}-\d{2}-\d{2})/);if(end)button.dataset.sourceEndDate=end[1]}));
     pubgButtonObserver.observe(document.getElementById('pubgFixtures'),{childList:true,subtree:true});
