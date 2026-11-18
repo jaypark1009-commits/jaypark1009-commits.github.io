@@ -117,8 +117,17 @@
     const pad = value => String(value).padStart(2, '0');
     const todayString = `${today.getFullYear()}-${pad(today.getMonth() + 1)}-${pad(today.getDate())}`;
     const examDate = new Date(2026, 10, 28);
-    const examDaysLeft = Math.ceil((new Date(examDate.getFullYear(), examDate.getMonth(), examDate.getDate()) - new Date(today.getFullYear(), today.getMonth(), today.getDate())) / 86400000);
-    document.getElementById('examDday').textContent = examDaysLeft > 0 ? `임용고시 D-${examDaysLeft}` : examDaysLeft === 0 ? '임용고시 D-DAY' : `임용고시 D+${Math.abs(examDaysLeft)}`;
+    const examDdayEl = document.getElementById('examDday');
+    function updateExamCountdown(){
+      const now = new Date();
+      const todayUtc = Date.UTC(now.getFullYear(),now.getMonth(),now.getDate());
+      const examDayUtc = Date.UTC(examDate.getFullYear(),examDate.getMonth(),examDate.getDate());
+      const daysLeft = Math.round((examDayUtc-todayUtc)/86400000);
+      examDdayEl.textContent = daysLeft > 0 ? `임용고시 D-${daysLeft}` : daysLeft === 0 ? '임용고시 D-DAY' : `임용고시 D+${Math.abs(daysLeft)}`;
+    }
+    updateExamCountdown();
+    window.setInterval(updateExamCountdown,60000);
+    document.addEventListener('visibilitychange',()=>{if(!document.hidden)updateExamCountdown()});
     document.getElementById('date').value = todayString;
     document.getElementById('weekLabel').textContent = `${today.getMonth() + 1}월 ${today.getDate()}일 기준`;
     function loadItems(){try{const items=JSON.parse(localStorage.getItem(KEY)) || [];const ids=new Set();let changed=false;items.forEach(item=>{if(!item.id || ids.has(item.id)){item.id=createId();changed=true}ids.add(item.id)});if(changed)saveItems(items);return items}catch(error){return []}}
