@@ -32,6 +32,58 @@
     .fixture-score{display:inline-block;margin-left:9px;color:var(--lime);font:700 12px 'DM Sans','Noto Sans KR',sans-serif}.fixture-score.unavailable{color:#9ba79e;font:500 10px 'Noto Sans KR',sans-serif}
     @media(max-width:760px){.exam-countdown{margin-bottom:18px;padding:10px 12px}.exam-countdown strong{font-size:14px}.exam-countdown span{font-size:11px}}
     @media(max-width:760px){.topbar{flex-wrap:wrap;gap:14px}.topbar>div:last-child{width:100%;flex-wrap:wrap;justify-content:space-between!important;gap:8px!important}}
+    @media(min-width:1000px){
+      .shell{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(270px,.82fr) minmax(0,1.1fr);gap:8px 16px;align-items:start;padding-top:12px}
+      .exam-countdown,.topbar,.intro{grid-column:1/-1}
+      .topbar{margin-bottom:0}.intro{height:82px;overflow:hidden;align-items:center;margin-bottom:0}.intro h1{font-size:24px;line-height:1.15;letter-spacing:0}.intro .eyebrow{margin-bottom:4px;font-size:9px}.intro-copy{display:none}
+      .dashboard,.sources,.source-grid,.board{display:contents}
+      .board-head{grid-column:1;grid-row:4;display:block;margin:0;padding:10px 14px 8px;background:#1a211c;border:1px solid var(--line);border-bottom:0;border-radius:12px 12px 0 0}
+      .board-head h2{margin-bottom:6px}
+      .schedule-list{grid-column:1;grid-row:5;max-height:340px;overflow:auto;padding:0 12px 12px;background:#1a211c;border:1px solid var(--line);border-top:0;border-radius:0 0 12px 12px}
+      .form-card{grid-column:2;grid-row:4/span 2;padding:17px 18px;border-radius:12px}
+      .form-card h2{margin-bottom:12px}.form-card h2 span{margin-bottom:4px}.field{margin-bottom:8px}.field label{margin-bottom:4px}.field input,.field select,.field textarea{padding:7px 9px}.field textarea{min-height:48px}.submit{padding:9px}
+      .section-title{grid-column:3;grid-row:4;align-self:center;margin:0 0 3px}.section-title h2{font-size:19px}.section-title p{font-size:10px}
+      .source-card{padding:13px 15px;border-radius:12px;box-shadow:none}.source-card.pubg{grid-column:3;grid-row:5}.source-card.football{grid-column:3;grid-row:6}
+      .source-card-head{gap:7px;flex-wrap:wrap;margin-bottom:6px}.source-card h3{font-size:15px}.source-card .official-link{font-size:9px}.source-card .fixture-toolbar{margin-bottom:3px}.source-card .fixture-list{max-height:240px;overflow:auto}.source-card.pubg .fixture-list{max-height:170px}.source-card .fixture{gap:7px;padding:5px 0;grid-template-columns:44px minmax(0,1fr) auto;font-size:10px}.source-card .fixture-meta{font-size:8px}
+      .source-card.pubg .source-card-head a:nth-of-type(n+2){display:none}.source-card.pubg .fixture-toolbar label{display:none}
+      .team-tabs{flex-wrap:wrap;margin-bottom:7px}.team-tabs button{padding:5px 7px;font-size:10px}
+      .calendar{grid-column:1;grid-row:5;margin:0;padding:10px 8px 8px;border:1px solid var(--line);border-top:0;border-radius:0 0 12px 12px;background:#1a211c}.calendar-head{gap:4px;margin-bottom:6px}.calendar-head h3{font-size:12px}.calendar-actions{gap:2px}.calendar-actions button,.calendar-actions select{padding:4px 5px;font-size:9px}.calendar-weekday{padding:3px 1px;font-size:8px}.calendar-day{min-height:44px;padding:2px 1px}.calendar-number{font-size:10px}.calendar-event{font-size:7px;padding:1px}.footer-line{grid-column:1/-1;grid-row:6;margin-top:4px}
+      .sources{margin-top:0}
+    }
+    @media(min-width:761px) and (max-width:999px){
+      .shell{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.8fr);gap:14px}
+      .exam-countdown,.topbar,.intro,.section-title{grid-column:1/-1}
+      .topbar{margin-bottom:12px}.intro{margin-bottom:8px}.dashboard,.sources{display:contents}.dashboard{display:grid;grid-template-columns:1fr 1fr;grid-column:1/-1}.board{grid-row:1/span 2}.form-card{grid-column:2}.sources{grid-column:1/-1}.source-grid{grid-template-columns:1fr 1fr}.source-card{padding:18px}
+    }
+    @media(min-width:1200px){
+      .shell{grid-template-columns:minmax(0,1.08fr) minmax(225px,.82fr) minmax(0,.95fr) minmax(0,.95fr)}
+      .form-card{grid-column:2}
+      .section-title{grid-column:3/5}
+      .source-card.pubg{grid-column:3;grid-row:5}
+      .source-card.football{grid-column:4;grid-row:5}
+      .source-card{padding:12px 11px}
+      .source-card .fixture{grid-template-columns:38px minmax(0,1fr) auto;gap:4px}
+      .source-card .fixture-date{font-size:10px}
+      .board-head .filters{gap:2px;padding:3px;flex-wrap:nowrap}
+      .board-head .filters button{padding:5px 5px;font-size:9px;white-space:nowrap}
+    }
+    @media(min-width:1000px) and (max-width:1199px){
+      .shell{grid-template-columns:minmax(200px,1fr) minmax(225px,.92fr) minmax(190px,.95fr) minmax(190px,.95fr)}
+      .intro{height:64px}.intro .eyebrow{display:none}
+      .form-card{grid-column:2}
+      .section-title{grid-column:3/5}
+      .source-card.pubg{grid-column:3;grid-row:5}
+      .source-card.football{grid-column:4;grid-row:5}
+      .source-card{padding:12px 10px}
+      .source-card .fixture{grid-template-columns:36px minmax(0,1fr) auto;gap:3px}
+      .board-head .filters{gap:1px;padding:3px;flex-wrap:nowrap}
+      .board-head .filters button{padding:5px 4px;font-size:8px;white-space:nowrap}
+      .source-card.football .fixture-name,.source-card.football .fixture-meta{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+      .source-card.football .fixture-list{max-height:240px}
+    }
+    @media(max-width:760px){.shell{display:block}.dashboard{display:grid}.sources{display:block}.source-grid{display:grid}.board{display:block}.calendar{display:block}}
+    @media(max-width:760px){.calendar-head{flex-wrap:wrap;gap:7px}.calendar-head h3{white-space:nowrap}.calendar-actions{width:100%;justify-content:space-between;flex-wrap:wrap}}
+    .row{grid-template-columns:repeat(2,minmax(0,1fr))}.field{min-width:0}.field input,.field select,.field textarea{min-width:0;max-width:100%}.field input[type="time"]{padding-left:5px;padding-right:5px;font-size:12px}
   </style>
 </head>
 <body>
@@ -40,7 +92,7 @@
     <nav class="topbar"><div class="brand"><span class="brand-mark">P</span> PLAYBOOK</div><div style="display:flex;align-items:center;gap:12px"><div class="top-note">친구들과의 다음 플레이를 기록하는 곳</div><div class="broadcast-dock" aria-label="관련 사이트"><strong>PLAY LINKS</strong><a class="broadcast-link" href="https://pubg.kakaogames.com/pubg/index.daum" target="_blank" rel="noreferrer" title="배틀그라운드 | 카카오게임즈" aria-label="배틀그라운드 | 카카오게임즈">🎮<span>배틀그라운드</span></a><a class="broadcast-link" href="https://youtube.com/" target="_blank" rel="noreferrer" title="YouTube" aria-label="YouTube">▶️<span>YouTube</span></a><a class="broadcast-link" href="https://gall.dcinside.com/mgallery/board/lists?id=fromis" target="_blank" rel="noreferrer" title="프로미스나인 갤러리" aria-label="프로미스나인 갤러리">💌<span>프로미스나인</span></a></div><button class="share-button" id="shareButton" type="button">↗ 카카오톡으로 공유</button></div></nav>
     <section class="intro"><div><p class="eyebrow">Your social scoreboard</p><h1>이번 주, 같이<br /><span>플레이할 시간</span>이에요.</h1></div><p class="intro-copy">배그 한 판부터 주말 축구까지.<br />우리 팀의 약속을 놓치지 않게 모아두세요.</p></section>
     <div class="dashboard">
-      <section class="board"><div class="board-head"><h2>다가오는 일정 <span class="count" id="count">0개</span></h2><div class="filters"><button class="active" data-filter="all">전체</button><button data-filter="battle">배틀그라운드</button><button data-filter="ball">축구</button><button data-filter="personal">개인일정</button></div></div><div id="list" class="schedule-list"></div><div class="calendar"><div class="calendar-head"><h3 id="calendarTitle">달력</h3><div class="calendar-actions"><button type="button" id="calendarPrev" aria-label="이전 달">이전</button><button type="button" id="calendarNext" aria-label="다음 달">다음</button><select id="calendarYear" aria-label="달력 연도"></select><select id="calendarMonth" aria-label="달력 월"></select><button type="button" id="calendarToday">오늘</button></div></div><div class="calendar-grid" id="calendarGrid"></div></div><div class="footer-line"><span>브라우저에 자동으로 저장됩니다</span><strong id="weekLabel"></strong></div></section>
+      <section class="board"><div class="board-head"><h2>일정 달력 <span class="count" id="count">0개</span></h2><div class="filters"><button class="active" data-filter="all">전체</button><button data-filter="battle">배틀그라운드</button><button data-filter="ball">축구</button><button data-filter="personal">개인일정</button></div></div><div class="calendar"><div class="calendar-head"><h3 id="calendarTitle">달력</h3><div class="calendar-actions"><button type="button" id="calendarPrev" aria-label="이전 달">이전</button><button type="button" id="calendarNext" aria-label="다음 달">다음</button><select id="calendarYear" aria-label="달력 연도"></select><select id="calendarMonth" aria-label="달력 월"></select><button type="button" id="calendarToday">오늘</button></div></div><div class="calendar-grid" id="calendarGrid"></div></div><div class="footer-line"><span>브라우저에 자동으로 저장됩니다</span><strong id="weekLabel"></strong></div></section>
       <aside class="form-card"><h2><span>New appointment</span>새 약속 만들기</h2><form id="itemForm"><div class="field"><label for="title">약속 이름</label><input id="title" placeholder="예: 금요일 치킨 먹고 스쿼드" required /></div><div class="row"><div class="field"><label for="category">종목</label><select id="category"><option value="battle">배틀그라운드</option><option value="ball">축구</option><option value="personal">개인일정</option></select></div><div class="field"><label for="people">참여 인원</label><input id="people" type="number" min="1" max="99" placeholder="4" /></div></div><div class="row"><div class="field"><label for="date">날짜</label><input id="date" type="date" required /></div><div class="field"><label for="time">시간</label><input id="time" type="time" value="20:00" /></div></div><div class="field"><label for="memo">한마디 <span style="font-weight:400">(선택)</span></label><textarea id="memo" placeholder="장소, 서버, 준비물 등을 적어주세요"></textarea></div><button class="submit" type="submit">약속 추가하기 <span>→</span></button></form></aside>
     </div>
     <section class="sources"><div class="section-title"><div><p class="eyebrow">Official match centre</p><h2>관심 경기 일정</h2></div><p>공식 일정 데이터 · PUBG 공식 토너먼트</p></div><div class="source-grid">
@@ -54,7 +106,6 @@
   <script>
     const KEY = 'playbook-schedule.items';
     const form = document.getElementById('itemForm');
-    const listEl = document.getElementById('list');
     let currentFilter = 'all';
     let selectedTeam = 'daejeon';
     let selectedFootballYear = '';
@@ -75,13 +126,10 @@
     function createId(){return typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(16).slice(2)}`}
     function formatDate(date){const value = new Date(`${date}T00:00:00`);return {day:value.getDate(),month:value.toLocaleDateString('ko-KR',{month:'short'}),weekday:value.toLocaleDateString('ko-KR',{weekday:'short'})}}
     function render(){
+      const items=loadItems();
+      const visible=currentFilter==='all'?items:items.filter(item=>item.category===currentFilter);
+      document.getElementById('count').textContent=`${visible.length}개`;
       renderCalendar();
-      const items = loadItems().sort((a,b) => `${a.date}${a.time}`.localeCompare(`${b.date}${b.time}`));
-      const visible = currentFilter === 'all' ? items : items.filter(item => item.category === currentFilter);
-      document.getElementById('count').textContent = `${visible.length}개`;
-      listEl.innerHTML = '';
-      if(!visible.length){listEl.innerHTML='<div class="empty">아직 잡힌 약속이 없어요.<br />오른쪽에서 첫 플레이를 만들어보세요.</div>';return}
-      visible.forEach(item => {const date = formatDate(item.date); const event = document.createElement('article'); event.className = `event${item.done ? ' done' : ''}`; event.dataset.itemId = item.id; event.innerHTML = `<div class="date-box"><strong>${date.day}</strong><small>${date.month} · ${date.weekday}</small></div><div><h3>${escapeHtml(item.title)}</h3><div class="event-meta"><span class="tag ${item.category}"><i></i>${categoryLabel(item.category)}</span>${item.time || '시간 미정'} ${item.people ? ` · ${item.people}명` : ''}${item.memo ? ` · ${escapeHtml(item.memo)}` : ''}</div></div><div class="event-actions"><button class="check" title="완료 처리" aria-label="완료 처리">${item.done ? '✓' : '○'}</button><button class="remove" title="일정 삭제" aria-label="일정 삭제">삭제</button></div>`; event.querySelector('.check').onclick = () => toggleDone(event.dataset.itemId); event.querySelector('.remove').onclick = () => removeItem(event.dataset.itemId); listEl.appendChild(event)})
     }
     function escapeHtml(value){return String(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[character]))}
     function removeItem(id){const items=loadItems().filter(item=>item.id!==id);saveItems(items);render()}
@@ -90,7 +138,7 @@
     function categoryLabel(category){return category === 'battle' ? '배틀그라운드' : category === 'ball' ? '축구' : '개인일정'}
     function dateKey(date){return `${date.getFullYear()}-${pad(date.getMonth()+1)}-${pad(date.getDate())}`}
     function syncCalendarSelectors(){const yearSelect=document.getElementById('calendarYear');const monthSelect=document.getElementById('calendarMonth');const years=[calendarDate.getFullYear()-1,calendarDate.getFullYear(),calendarDate.getFullYear()+1];yearSelect.innerHTML=years.map(year=>`<option value="${year}">${year}년</option>`).join('');monthSelect.innerHTML=Array.from({length:12},(_,index)=>`<option value="${index}">${index+1}월</option>`).join('');yearSelect.value=String(calendarDate.getFullYear());monthSelect.value=String(calendarDate.getMonth())}
-    function renderCalendar(){const title=document.getElementById('calendarTitle');const grid=document.getElementById('calendarGrid');const monthLabel=calendarDate.toLocaleDateString('ko-KR',{year:'numeric',month:'long'});title.textContent=monthLabel;syncCalendarSelectors();const weekdays=['일','월','화','수','목','금','토'];const tournamentItems=pubgFixtures.flatMap(match=>{const endMatch=String(match[2]).match(/종료\s+(\d{4}-\d{2}-\d{2})/);const endDate=endMatch?new Date(`${endMatch[1]}T00:00:00`):new Date(`${match[3]}T00:00:00`);const endKey=dateKey(endDate);const currentDate=new Date(`${match[3]}T00:00:00`);const startKey=dateKey(currentDate);const dates=[];while(currentDate<=endDate){const key=dateKey(currentDate);dates.push({date:key,category:'battle tournament',title:`PUBG · ${match[1]}`,rangeStart:key===startKey,rangeEnd:key===endKey});currentDate.setDate(currentDate.getDate()+1)}return dates});const items=[...loadItems(),...tournamentItems];let html=weekdays.map(day=>`<div class="calendar-weekday">${day}</div>`).join('');const firstDay=calendarDate.getDay();const daysInMonth=new Date(calendarDate.getFullYear(),calendarDate.getMonth()+1,0).getDate();const previousDays=new Date(calendarDate.getFullYear(),calendarDate.getMonth(),0).getDate();for(let cell=0;cell<42;cell++){const dayNumber=cell-firstDay+1;const date=new Date(calendarDate.getFullYear(),calendarDate.getMonth(),dayNumber);const isCurrentMonth=dayNumber>0 && dayNumber<=daysInMonth;const key=dateKey(date);const dayItems=items.filter(item=>item.date===key);const classes=`calendar-day${isCurrentMonth?'':' muted'}${key===todayString?' today':''}`;const visibleItems=dayItems.slice(0,3).map(item=>`<span class="calendar-event ${item.category}${item.rangeStart?' range-start':''}${item.rangeEnd?' range-end':''}" title="${escapeHtml(item.title)}">${escapeHtml(item.title)}</span>`).join('');const more=dayItems.length>3?`<span class="calendar-event" style="background:var(--muted)">+${dayItems.length-3}개</span>`:'';html+=`<button type="button" class="${classes}" data-date="${key}"><span class="calendar-number">${date.getDate()}</span><span class="calendar-events">${visibleItems}${more}</span></button>`}grid.innerHTML=html;grid.querySelectorAll('.calendar-day').forEach(day=>day.onclick=()=>{document.getElementById('date').value=day.dataset.date;document.getElementById('title').focus()})}
+    function renderCalendar(){const title=document.getElementById('calendarTitle');const grid=document.getElementById('calendarGrid');const monthLabel=calendarDate.toLocaleDateString('ko-KR',{year:'numeric',month:'long'});title.textContent=monthLabel;syncCalendarSelectors();const weekdays=['일','월','화','수','목','금','토'];const tournamentItems=pubgFixtures.flatMap(match=>{const endMatch=String(match[2]).match(/종료\s+(\d{4}-\d{2}-\d{2})/);const endDate=endMatch?new Date(`${endMatch[1]}T00:00:00`):new Date(`${match[3]}T00:00:00`);const endKey=dateKey(endDate);const currentDate=new Date(`${match[3]}T00:00:00`);const startKey=dateKey(currentDate);const dates=[];while(currentDate<=endDate){const key=dateKey(currentDate);dates.push({date:key,category:'battle tournament',title:`PUBG · ${match[1]}`,rangeStart:key===startKey,rangeEnd:key===endKey});currentDate.setDate(currentDate.getDate()+1)}return dates});const items=[...loadItems(),...tournamentItems];let html=weekdays.map(day=>`<div class="calendar-weekday">${day}</div>`).join('');const firstDay=calendarDate.getDay();const daysInMonth=new Date(calendarDate.getFullYear(),calendarDate.getMonth()+1,0).getDate();for(let cell=0;cell<42;cell++){const dayNumber=cell-firstDay+1;const date=new Date(calendarDate.getFullYear(),calendarDate.getMonth(),dayNumber);const key=dateKey(date);const currentMonth=dayNumber>0&&dayNumber<=daysInMonth;const dayItems=items.filter(item=>item.date===key&&(currentFilter==='all'||String(item.category).split(' ').includes(currentFilter)));const classes=`calendar-day${currentMonth?'':' muted'}${key===todayString?' today':''}`;const visible=dayItems.slice(0,3).map(item=>`<span class="calendar-event ${item.category}${item.rangeStart?' range-start':''}${item.rangeEnd?' range-end':''}" title="${escapeHtml(item.title)}">${escapeHtml(item.title)}</span>`).join('');const more=dayItems.length>3?`<span class="calendar-event" style="background:var(--muted)">+${dayItems.length-3}개</span>`:'';html+=`<button type="button" class="${classes}" data-date="${key}"><span class="calendar-number">${date.getDate()}</span><span class="calendar-events">${visible}${more}</span></button>`}grid.innerHTML=html;grid.querySelectorAll('.calendar-day').forEach(day=>day.onclick=()=>{document.getElementById('date').value=day.dataset.date;document.getElementById('title').focus()})}
     document.getElementById('calendarPrev').onclick=()=>{calendarDate.setMonth(calendarDate.getMonth()-1);renderCalendar()};
     document.getElementById('calendarNext').onclick=()=>{calendarDate.setMonth(calendarDate.getMonth()+1);renderCalendar()};
     document.getElementById('calendarYear').onchange=event=>{calendarDate.setFullYear(Number(event.target.value));renderCalendar()};
@@ -309,7 +357,7 @@
         const isPast=match[3]<todayString;
         const hasScore=match[6]!==null&&match[6]!==undefined&&match[7]!==null&&match[7]!==undefined;
         const score=isPast?(hasScore?'<strong class="fixture-score">'+escapeHtml(match[6])+' : '+escapeHtml(match[7])+'</strong>':'<strong class="fixture-score unavailable">결과 확인 필요</strong>'):'';
-        return '<div class="fixture"><div class="fixture-date">'+match[0]+'</div><div><span class="fixture-name">'+escapeHtml(match[1])+score+'</span><span class="fixture-meta">'+escapeHtml(match[2])+(match[5]?' · <a href="'+match[5]+'" target="_blank" rel="noreferrer">원문 ↗</a>':'')+'</span></div><button class="add-source" data-source-title="'+escapeHtml(match[1])+'" data-source-date="'+match[3]+'" data-source-time="'+match[4]+'" data-source-category="ball">+ 추가</button></div>';
+        return '<div class="fixture"><div class="fixture-date">'+match[0]+'</div><div><span class="fixture-name" title="'+escapeHtml(match[1])+'">'+escapeHtml(match[1])+score+'</span><span class="fixture-meta">'+escapeHtml(match[2])+(match[5]?' · <a href="'+match[5]+'" target="_blank" rel="noreferrer">원문 ↗</a>':'')+'</span></div><button class="add-source" data-source-title="'+escapeHtml(match[1])+'" data-source-date="'+match[3]+'" data-source-time="'+match[4]+'" data-source-category="ball">+ 추가</button></div>';
       }).join(''):'<div class="empty">해당 연도·월에 동기화된 일정이 없습니다.</div>';
       target.querySelectorAll('.add-source').forEach(button=>button.onclick=()=>addSourceEvent(button));
     }
